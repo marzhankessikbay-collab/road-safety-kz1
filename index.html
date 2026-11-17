@@ -95,6 +95,10 @@
 
   .txt{font-size:17.5px;line-height:1.65;margin:18px 0}
   .verdict .txt{margin:0 0 16px}
+  .fq{font-size:15px;color:var(--muted);margin:0 0 6px}
+  .bign{font-size:15px;line-height:1.3;margin:10px 0}
+  .bign span{display:block;font-family:var(--display);font-weight:900;font-size:46px;line-height:1;color:#c99400}
+  .bign.red span{color:var(--red)}
   .q{background:#fff6d6;border:1px solid #efd27a;border-radius:12px;padding:18px 22px;margin:26px 0;font-size:17px}
 
   /* silences */
@@ -109,6 +113,7 @@
   .ln{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e3ded3;border-left:8px solid var(--c);border-radius:10px;padding:12px 16px;font-size:15.5px;line-height:1.45}
   .lnno{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--c);color:#111;font-family:var(--display);font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
   .ln b{display:block;font-size:17px}
+  .ln i{font-style:normal;font-weight:700}
   .ln cite{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:3px}
 
   /* solution */
@@ -171,6 +176,7 @@
   @media (max-width:600px){.conds{grid-template-columns:1fr}}
   .cond{background:#fff;border-radius:10px;padding:10px 14px;font-weight:600;font-size:15.5px;border-left:6px solid}
   .cond.ok{border-color:#1f7a42}.cond.no{border-color:#b3321c}
+  .note2{font-size:15.5px;color:#3d4147;background:#fff;border-radius:10px;padding:10px 14px}
   .vline{margin:18px 0 0;font-size:17px}
 
   /* AI */
@@ -262,10 +268,10 @@
     <figcaption>Young working men, often a family's main earner, and people on foot. From a study of every road death in the Semey region, 2006–2010.<sup><a href="#r4">4</a></sup></figcaption>
   </figure>
 
-  <div class="duo reveal">
+  <div class="reveal">
     <figure>
       <h4>Fewer crashes, more deaths (2018 → 2022)</h4>
-      <svg viewBox="0 0 400 200" width="100%" role="img" aria-label="Slope chart: crashes fell 6.2%, deaths rose 15.9% between 2018 and 2022">
+      <svg viewBox="0 0 400 200" width="100%" style="max-width:520px;display:block;margin:0 auto" role="img" aria-label="Slope chart: crashes fell 6.2%, deaths rose 15.9% between 2018 and 2022">
         <line x1="70" y1="20" x2="70" y2="170" stroke="#d8d3c8"/><line x1="250" y1="20" x2="250" y2="170" stroke="#d8d3c8"/>
         <text x="70" y="190" text-anchor="middle" font-size="12">2018</text><text x="250" y="190" text-anchor="middle" font-size="12">2022</text>
         <line class="draw" x1="70" y1="100" x2="250" y2="45" stroke="#e4573d" stroke-width="5"/>
@@ -274,19 +280,11 @@
         <circle cx="250" cy="122" r="6" fill="#6e737a"/><text x="258" y="140" font-size="14" font-weight="700" style="fill:#6e737a">crashes −6.2%</text>
         <circle cx="70" cy="100" r="6" fill="#1d1f23"/>
       </svg>
-      <figcaption>Crashes became deadlier: the "severity paradox".<sup><a href="#r3">3</a>,<a href="#r5">5</a></sup> Deaths dipped to ~2,300 in 2025, but one year is not a trend.<sup><a href="#r2">2</a></sup></figcaption>
-    </figure>
-    <figure>
-      <h4>Kazakhstan vs Germany: deaths per 100,000 people</h4>
-      <div class="people">
-        <div><span class="pcount" data-n="13"></span><b>12.7</b> Kazakhstan</div>
-        <div><span class="pcount" data-n="3" data-g="1"></span><b>2.6</b> Germany</div>
-      </div>
-      <figcaption>About five times higher (2023).<sup><a href="#r2">2</a></sup></figcaption>
+      <figcaption>Researchers call this the "severity paradox".<sup><a href="#r3">3</a>,<a href="#r5">5</a></sup></figcaption>
     </figure>
   </div>
 
-  <p class="txt reveal">Something strange happened between 2018 and 2022: recorded crashes went down, but deaths went up. Crashes were becoming more deadly. Deaths dipped in 2025, but one good year does not make a trend.</p>
+  <p class="txt reveal">Something strange happened between 2018 and 2022: recorded crashes went down, but deaths went up. Crashes were becoming more deadly. Deaths dipped to about 2,300 in 2025,<sup><a href="#r2">2</a></sup> but one good year does not make a trend.</p>
   <figure class="reveal">
     <h4>Who gets the blame, and who pays</h4>
     <div class="hbars">
@@ -390,25 +388,20 @@
   <p class="txt reveal">Researchers study road deaths in very different ways. Each approach sees a different problem, and so suggests a different fix. I grouped the academic literature into five approaches, from "who dies" to "who holds power".</p>
 
   <div class="lanes reveal">
-    <div class="ln" style="--c:#e4573d"><span class="lnno">1</span><div><b>Health researchers: who dies?</b>Men, pedestrians, highway crashes; most die at the scene. They describe the problem but can't say which fixes work.<cite>Myssayev et al. 2014; Akbar et al. 2026<sup><a href="#r4">4</a>,<a href="#r5">5</a></sup></cite></div></div>
-    <div class="ln" style="--c:#f08a3c"><span class="lnno">2</span><div><b>Economists: richer countries first get deadlier roads</b>Deaths rise with car ownership and fall only after a turning point. Is that automatic, or can policy speed it up?<cite>Kopits &amp; Cropper 2005<sup><a href="#r8">8</a></sup></cite></div></div>
-    <div class="ln" style="--c:#f2c230"><span class="lnno">3</span><div><b>Camera studies: cameras work, but drivers adapt</b>See the two charts below. There is no independent study of Kazakhstan's AI cameras.<cite>Wilson et al. 2010; De Pauw et al. 2014<sup><a href="#r9">9</a>,<a href="#r23">23</a></sup></cite></div></div>
-    <div class="ln" style="--c:#4fae6e"><span class="lnno">4</span><div><b>Data scientists: AI can predict crashes</b>…but only with exact locations and linked records, which Kazakhstan does not have.<cite>Silva et al. 2020; Ali et al. 2024<sup><a href="#r10">10</a>,<a href="#r11">11</a></sup></cite></div></div>
-    <div class="ln" style="--c:#1f4fa3"><span class="lnno">5</span><div><b>Political scientists: cameras as a "quick fix"</b>Smart-city cameras in Almaty promise order with little public control, but nobody checks whether roads got safer.<cite>Marat &amp; Sutton 2021<sup><a href="#r12">12</a></sup></cite></div></div>
+    <div class="ln" style="--c:#e4573d"><span class="lnno">1</span><div><b>Doctors and health researchers ask: who dies?</b>They studied death records and found that most victims are men, many are pedestrians, and most die right at the crash site. <i>What's missing:</i> they show the problem, but not how to fix it.<cite>Myssayev et al. 2014; Akbar et al. 2026<sup><a href="#r4">4</a>,<a href="#r5">5</a></sup></cite></div></div>
+    <div class="ln" style="--c:#f08a3c"><span class="lnno">2</span><div><b>Economists ask: does it get better as a country gets richer?</b>They found that when a country gets richer, more people buy cars, so road deaths go up first. Only later, when the country is richer still, do deaths start to fall. Kazakhstan may still be in this "going up" stage. <i>Open question:</i> do we just wait, or can good policy make deaths fall sooner?<cite>Kopits &amp; Cropper 2005<sup><a href="#r8">8</a></sup></cite></div></div>
+    <div class="ln" style="--c:#f2c230"><span class="lnno">3</span><div><b>Traffic researchers ask: do speed cameras work?</b>Yes, they reduce crashes near the camera. But drivers learn where the cameras are: they slow down at the camera and speed up again after it (the two charts below show this). <i>What's missing:</i> nobody independent has checked whether Kazakhstan's AI cameras work.<cite>Wilson et al. 2010; De Pauw et al. 2014<sup><a href="#r9">9</a>,<a href="#r23">23</a></sup></cite></div></div>
+    <div class="ln" style="--c:#4fae6e"><span class="lnno">4</span><div><b>Data scientists ask: can AI predict where crashes will happen?</b>Yes, computer programs can learn from past crashes to predict future ones. <i>The catch:</i> they need exact crash locations and police and hospital records joined together, and Kazakhstan doesn't have that yet.<cite>Silva et al. 2020; Ali et al. 2024<sup><a href="#r10">10</a>,<a href="#r11">11</a></sup></cite></div></div>
+    <div class="ln" style="--c:#1f4fa3"><span class="lnno">5</span><div><b>Political scientists ask: who controls the cameras?</b>They studied camera systems in Almaty, Kyiv and Bishkek. Governments install them to look modern and keep order, but the public has little say over how they are used. <i>What's missing:</i> they don't check whether the cameras actually made roads safer.<cite>Marat &amp; Sutton 2021<sup><a href="#r12">12</a></sup></cite></div></div>
   </div>
 
   <div class="duo reveal">
     <figure>
-      <h4>Near the cameras, speed cameras cut crashes by…</h4>
-      <svg viewBox="0 0 320 150" width="100%" role="img" aria-label="Range bars: injury crashes reduced 8 to 50 percent; deadly or serious crashes reduced 11 to 44 percent">
-        <line x1="20" y1="110" x2="300" y2="110" stroke="#d8d3c8"/>
-        <g font-size="11" style="fill:#7a7f86"><text x="20" y="126" text-anchor="middle">0%</text><text x="160" y="126" text-anchor="middle">25%</text><text x="300" y="126" text-anchor="middle">50%</text></g>
-        <text x="20" y="28" font-size="13">injury crashes</text>
-        <rect class="bar" x="65" y="36" width="235" height="16" rx="8" fill="#f2c230"/><text x="65" y="66" font-size="12" font-weight="700">8%</text><text x="300" y="66" font-size="12" font-weight="700" text-anchor="end">50%</text>
-        <text x="20" y="84" font-size="13">deadly / serious crashes</text>
-        <rect class="bar" x="82" y="90" width="184" height="16" rx="8" fill="#e4573d"/><text x="82" y="146" font-size="12" font-weight="700">11%</text><text x="266" y="146" font-size="12" font-weight="700" text-anchor="end">44%</text>
-      </svg>
-      <figcaption>A review of 35 studies. None of them came from a low-income country.<sup><a href="#r9">9</a></sup></figcaption>
+      <h4>Do speed cameras work?</h4>
+      <p class="fq">Near a speed camera, there were…</p>
+      <div class="bign"><span>8–50%</span>fewer crashes with injuries</div>
+      <div class="bign red"><span>11–44%</span>fewer crashes where someone died or was badly hurt</div>
+      <figcaption>The result depends on the place, so it's a range. From a review of 35 studies, none of them in a low-income country.<sup><a href="#r9">9</a></sup></figcaption>
     </figure>
     <figure>
       <h4>The "kangaroo effect"</h4>
@@ -493,11 +486,11 @@
   <p class="txt reveal">Every AI solution has a price, and not only in money. I priced Jol Radar in five ways: the environment, the economy, workers, politics and data. The surprising result is that the AI itself is the cheapest part.</p>
   <div class="receipt reveal">
     <div class="r-head"><b>JOL RADAR · TOLL RECEIPT</b><span>Payer: the public</span></div>
-    <div class="row"><h4><span>🌍 Environmental</span><em class="w w-low">LOW</em></h4>No new fixed cameras, just phones already on buses. That matters because 74.9% of Kazakhstan's electricity comes from coal.<sup><a href="#r20">20</a></sup> Any roadside units should be solar-powered, like KazAvtoZhol's.<sup><a href="#r27">27</a></sup></div>
-    <div class="row"><h4><span>💰 Economic</span><em class="w w-high">HIGH</em></h4>The AI is cheap. The repairs are not: the road budget is 1.2 trillion ₸ against a need of 1.9 trillion.<sup><a href="#r2">2</a></sup> Rescue posts mean salaries. Who profits? Tech firms, and cities if it turns into a fine machine.<sup><a href="#r17">17</a>,<a href="#r30">30</a></sup></div>
-    <div class="row"><h4><span>👷 Labor</span><em class="w w-med">MEDIUM</em></h4>Hidden "ghost work": people who label images and fix the AI's mistakes, often low-paid.<sup><a href="#r21">21</a></sup> Bus drivers must be asked, not secretly turned into sensors.</div>
-    <div class="row"><h4><span>🏛️ Governance</span><em class="w w-high">HIGH</em></h4>Function creep: Sergek, built for traffic, was used to track people during COVID-19.<sup><a href="#r18">18</a></sup> Plate data has real uses (average-speed checks<sup><a href="#r29">29</a></sup>) but shows where everyone went. Astana's new cameras are built by a UAE company.<sup><a href="#r30">30</a></sup></div>
-    <div class="row"><h4><span>🔐 Data ethics</span><em class="w w-high">HIGH</em></h4>Hospital data is health data, and faces and plates must be blurred on the phone. The danger: AI trained on police data could ignore villages, where data is weakest.</div>
+    <div class="row"><h4><span>🌍 Environment</span><em class="w w-low">LOW</em></h4><b>Does it harm nature?</b> Not much. Jol Radar adds no new cameras; it uses phones that are already on buses. That matters because 74.9% of Kazakhstan's electricity comes from coal,<sup><a href="#r20">20</a></sup> so every new machine means more coal burned. Any new roadside equipment should run on solar power, like KazAvtoZhol's new cameras.<sup><a href="#r27">27</a></sup></div>
+    <div class="row"><h4><span>💰 Money</span><em class="w w-high">HIGH</em></h4><b>Is it expensive?</b> The AI itself is cheap. Fixing the roads is not: the state plans to spend 1.2 trillion ₸ on roads, but they need 1.9 trillion.<sup><a href="#r2">2</a></sup> Rescue posts also mean paying staff. <b>Who could make money?</b> Tech companies, and cities, if the system is turned into a machine for fines.<sup><a href="#r17">17</a>,<a href="#r30">30</a></sup></div>
+    <div class="row"><h4><span>👷 Workers</span><em class="w w-med">MEDIUM</em></h4><b>Whose work changes?</b> Behind every AI there are people checking its work: labelling photos and fixing its mistakes. This is called "ghost work", and it is often badly paid.<sup><a href="#r21">21</a></sup> These people must be paid fairly. Bus drivers should be told and asked before phones go on their buses.</div>
+    <div class="row"><h4><span>🏛️ Power &amp; control</span><em class="w w-high">HIGH</em></h4><b>Could it be misused?</b> Yes. Sergek was built for traffic, but during COVID-19 it was used to track people.<sup><a href="#r18">18</a></sup> Cameras that read licence plates help with safety, for example checking average speed between two points,<sup><a href="#r29">29</a></sup> but they also show where every car went. And Astana's new camera system is being built by a company from the UAE,<sup><a href="#r30">30</a></sup> so who keeps the data is a real question.</div>
+    <div class="row"><h4><span>🔐 Data &amp; privacy</span><em class="w w-high">HIGH</em></h4><b>Is people's data safe?</b> Hospital records are private health data, so names must be removed. Road videos can show people and car plates, so these must be blurred on the phone before they're sent. <b>The biggest danger:</b> if the AI learns only from police data, it may ignore villages, because crashes there are recorded less often.</div>
     <div class="r-foot"><span>TOTAL</span><span>The AI is the cheapest line on this bill.</span></div>
   </div>
 
@@ -528,8 +521,9 @@
       <div class="cond ok">✓ A 2-year pilot in the Almaty region, checked by a university</div>
       <div class="cond ok">✓ Repair money follows the map</div>
       <div class="cond no">✕ No faces, no plates, no driver scores</div>
-      <div class="cond no">✕ No pay from fines, ever</div>
+      <div class="cond no">✕ The AI company is never paid from fine money</div>
     </div>
+    <p class="vline note2">Speeding fines stay. Police and existing cameras keep doing their job. Jol Radar just doesn't hand out fines itself, so nobody profits from catching more drivers instead of saving lives.</p>
     <p class="vline">If these can't be met: <b>skip the AI</b> and spend the money on roads, lights and ambulances. Drivers keep saying it: <em>the road is the problem.</em></p>
   </div>
   <div class="lane" aria-hidden="true"></div>
